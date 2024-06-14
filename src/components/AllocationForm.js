@@ -2,14 +2,14 @@ import React, { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
 
 const AllocationForm = (props) => {
-    const { dispatch,remaining,budget } = useContext(AppContext);
+    const { dispatch,remaining } = useContext(AppContext);
 
     const [name, setName] = useState('');
     const [cost, setCost] = useState(0);
     const [action, setAction] = useState('');
 
     const submitEvent = () => {
-        alert("The value cannot exceed remaining funds  £0");
+        alert("You cannot reduce the budget value lower then the spending");
         if(cost > remaining) {
             alert("The value cannot exceed remaining funds  £"+remaining);
             setCost("");
